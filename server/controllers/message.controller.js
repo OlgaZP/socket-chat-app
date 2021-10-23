@@ -2,7 +2,7 @@ const Message = require('../models/message');
 
 module.exports.getMessages = async (req, res, next) => {
   try {
-    const foundMessages = Message.find()
+    const foundMessages = await Message.find()
       .limit(20)
       .sort({ createdAt: -1 });
     res.status(200).send({ data: foundMessages });

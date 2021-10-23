@@ -1,7 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const { messageController } = require('./controllers');
 
 const app = express();
+
+app.use(cors());
 
 app.get('/api/messages', messageController.getMessages);
 
