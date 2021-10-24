@@ -32,10 +32,12 @@ const messageReducer = (state = initialState, action) => {
     case ACTION_TYPES.CREATE_MESSAGE_SUCCESS: {
       const { payload: newMessage } = action;
       const { messages, limit } = state;
-      if (messages.length >= limit) {
-        messages.shift();
-      }
+
       const newMessages = [...messages, newMessage];
+
+      if (newMessages.length > limit) {
+        newMessages.shift();
+      }
 
       return { ...state, messages: newMessages, isFetching: false };
     }

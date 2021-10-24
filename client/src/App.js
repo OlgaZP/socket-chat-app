@@ -22,13 +22,13 @@ function App () {
   return (
     <>
       <h1>Test Chat</h1>
-      <ul>
+      <ol>
         {messages.map(m => (
           <li>
             {m.createdAt} {m.author}: {m.body}
           </li>
         ))}
-      </ul>
+      </ol>
       {error && <div>ERROR!!!</div>}
       {isFetching && <div>Wait.. data loading!</div>}
       <Formik

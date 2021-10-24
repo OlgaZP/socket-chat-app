@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const {}
 
 mongoose
   .connect('mongodb://localhost:27017/chat_db')
@@ -10,5 +9,4 @@ mongoose
     console.log(`err`, err);
   });
 
-  module.exports.Mesage = require('./message')
-
+module.exports.Mesage = require('./message');
